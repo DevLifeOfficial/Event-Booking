@@ -8,6 +8,7 @@ import { v4 as uuid } from "uuid";
 import DisplayCard from "../components/ui/DisplayCard";
 import ConfirmModal from "../components/ui/ConfirmModal";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import ToolTip from "../components/ui/ToolTip";
 
 export default function BookingTicket() {
   const { id } = useParams();
@@ -185,8 +186,15 @@ export default function BookingTicket() {
 
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-3xl mx-auto">
             {generateSeats(seats).map((seat) => (
-              <div
+               <ToolTip 
                 key={seat}
+                 content={seat}
+                 config={{
+                  position : 'top',
+                  trigger : 'hover',
+                  delay :200,
+                 }}>
+              <div
                 className="max-w-xl flex flex-col items-center gap-2"
               >
                 <button
@@ -212,6 +220,7 @@ export default function BookingTicket() {
                   {seat}
                 </span>
               </div>
+              </ToolTip>
             ))}
           </div>
         </div>
