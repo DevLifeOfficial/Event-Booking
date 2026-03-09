@@ -1,5 +1,5 @@
 import { Armchair, MapPinIcon } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import CinemaScreen from "../components/ui/CinemaScreen";
 import { useEventBooking } from "../context/EventBooking";
